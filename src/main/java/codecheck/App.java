@@ -15,7 +15,7 @@ public class App {
        queri = queri.replace(" ", "%20");
        queri = queri.replace("'", "%27");
 
-       URL url = new URL("http://challenge-server.code-check.io/api/hash" + "?q=" + args[i]);
+       URL url = new URL("http://challenge-server.code-check.io/api/hash" + "?q=" + queri);
 
        System.out.println(url);
 
