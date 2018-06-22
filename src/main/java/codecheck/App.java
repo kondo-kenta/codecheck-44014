@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class App {
-  public static void main(String[] args){
+  public static void main(String[] args) throws Exception {
 
     for (int i = 0, l = args.length; i < l; i++) {
 
