@@ -26,7 +26,7 @@ public class App {
 
        String output = sb.toString();
 
-       System.out.println(output.substring(output.lastIndexOf(":")+1));
+       System.out.println(output.substring(output.lastIndexOf(":")+2,output.lastIndexOf("}")-1));
 
         }
     }
