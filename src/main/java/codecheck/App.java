@@ -22,7 +22,6 @@ public class App {
 
        int statusCode = conn.getResponseCode();
 
-       String responseData "";
        InputStream stream = conn.getInputStream();
 
        StringBuffer sb = new StringBuffer();
