@@ -17,6 +17,7 @@ public class App {
        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
        conn.setRequestMethod("GET");
        conn.setDoInput(true);
+
        conn.connect();
 
        int statusCode = conn.getResponseCode();
