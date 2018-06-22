@@ -12,7 +12,7 @@ public class App {
 
        String output = String.format("argv[%s]: %s", i, args[i]);
 
-       URL url = new URL("http://challenge-server.code-check.io/api/hash" + "?" + output);
+       URL url = new URL("http://challenge-server.code-check.io/api/hash" + "?q=" + output);
        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
        conn.setRequestMethod("GET");
        conn.setDoOutput(false);
