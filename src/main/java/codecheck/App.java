@@ -13,7 +13,7 @@ public class App {
 
        String output = String.format("argv[%s]: %s", i, args[i]);
 
-       URL url = new URL("http://challenge-server.code-check.io/");
+       URL url = new URL("http://challenge-server.code-check.io/api/hash");
        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
        conn.setRequestMethod("GET");
        conn.setDoInput(true);
