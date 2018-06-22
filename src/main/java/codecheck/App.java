@@ -11,6 +11,9 @@ public class App {
     for (int i = 0, l = args.length; i < l; i++) {
 
        URL url = new URL("http://challenge-server.code-check.io/api/hash" + "?q=" + args[i]);
+
+       System.out.println(url);
+
        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
        conn.setRequestMethod("GET");
        conn.setDoOutput(false);
@@ -25,6 +28,8 @@ public class App {
        }
 
        String output = sb.toString();
+
+       System.out.println(output);
 
        System.out.println(output.substring(output.lastIndexOf(":")+2,output.lastIndexOf("}")-1));
 
