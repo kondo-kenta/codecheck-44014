@@ -14,20 +14,23 @@ public class App {
 
        String output = String.format("argv[%s]: %s", i, args[i]);
 
-       URL url = new URL("http://challenge-server.code-check.io/api/hash");
+       URL url = new URL("http://challenge-server.code-check.io/api/hash" + output);
        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
        conn.setRequestMethod("GET");
+       conn.setDoOutput(false);
        conn.setDoInput(true);
        conn.connect();
 
-       PrintWriter out = new PrintWriter(conn.getOutputStream());
-       out.write(output);
-       out.flush();
-       out.close();
-       
-       InputStream in = conn.getInputStream();
+       responseCode = conn.getResponseCode();
 
-       System.out.println(output);
+       StringBuffer sb = new StringBuffer();
+       String line = "";
+       BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+       while ((line = br.readLine()) != null) {
+           sb.append(line);
+       }
+
+       System.out.println(sb.toString());
 
         }
     }
