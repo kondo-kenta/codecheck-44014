@@ -10,8 +10,6 @@ public class App {
 
     for (int i = 0, l = args.length; i < l; i++) {
 
-       String output = String.format("argv[%s]: %s", i, args[i]);
-
        URL url = new URL("http://challenge-server.code-check.io/api/hash" + "?q=" + args[i]);
        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
        conn.setRequestMethod("GET");
@@ -26,7 +24,9 @@ public class App {
            sb.append(line);
        }
 
-       System.out.println(sb.toString());
+       String output = sb.toString();
+
+       System.out.println(output.substring(output.lastIndexOf(":")+1));
 
         }
     }
